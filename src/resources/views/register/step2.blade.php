@@ -14,7 +14,7 @@
             </div>
     </div>
 
-    <form class="form" action="/weight_target" method="post">
+    <form class="form" action="/weight_logs" method="post">
     @csrf
         <input type="hidden" name="user_id" value="{{ $user->id }}" />
         <div class="form__group">
@@ -44,7 +44,7 @@
                     <input type="integer" name="target_weight" placeholder="目標の体重を入力"/>kg
                 </div>
                 <div class="form__error">
-                    @error('target-weight')
+                    @error('target_weight')
                         {{ $message }}
                     @enderror
                 </div>

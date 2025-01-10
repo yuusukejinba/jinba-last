@@ -8,6 +8,7 @@ use App\Models\Weight_target;
 use App\Models\Weight_logs;
 use App\Http\Requests\AuthorRequest;
 
+
 class AuthController extends Controller
 {
     public function register() 
@@ -41,5 +42,8 @@ public function store(Request $request)
         $weight_logs = Weight_logs::all();
 return view('weight_logs', compact('weight_logs'));
 }
-
+public function index()
+{
+    return view('weight_logs/goal_setting');
+}
 }

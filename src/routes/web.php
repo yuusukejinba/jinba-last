@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Weight_management;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +22,9 @@ Route::middleware('auth')->group(function () {
 Route::post('register/step2', [AuthController::class, 'register']);
 Route::post('register/step2', [AuthController::class, 'create']);
 
-Route::post('/weight_target', [AuthController::class, 'store']);
+Route::post('/weight_logs', [AuthController::class, 'store']);
+Route::get('/weight_logs/goal_setting', [AuthController::class, 'index']);
+Route::post('/weight_logs/goal_setting', [AuthController::class, 'index']);
+
+
 
