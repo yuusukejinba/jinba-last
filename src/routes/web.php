@@ -25,6 +25,7 @@ Route::post('register/step2', [AuthController::class, 'create']);
 Route::post('/weight_logs', [AuthController::class, 'store']);
 Route::get('/weight_logs/goal_setting', [AuthController::class, 'index']);
 Route::post('/weight_logs/goal_setting', [AuthController::class, 'index']);
+Route::post('/weight_logs/{:weightLogId}/update', [AuthController::class, 'update']);
 
 
 

@@ -4,7 +4,7 @@
 ## 環境構築
 
 ・リポジトリの設定  
-コマンドラインにてgit clone git@githubcom:yuusukejinba/jinba-last.git  
+コマンドラインにてgit clone git@github.com:yuusukejinba/jinba-last.git  
 
 ・Docker の設定  
 1.docker-compose up -d --build  

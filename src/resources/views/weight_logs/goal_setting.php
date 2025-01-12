@@ -22,8 +22,9 @@
     </header>
 
     <main>
-        <form class="form__setting" action="/weight_logs" method="post"></form>
-        
+    <div>
+        <form class="form__setting" action="/weight_logs/{:weightLogId}/update" method="post">
+        @csrf
             <div class="form__weight__setting">
                 <div class="weight__setting__title">
                     <h2>目標体重</h2>
@@ -40,4 +41,5 @@
                 </div>
             </div>        
         </form>
+    </div>
     </main>

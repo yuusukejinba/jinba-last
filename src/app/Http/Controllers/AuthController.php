@@ -46,4 +46,12 @@ public function index()
 {
     return view('weight_logs/goal_setting');
 }
+
+public function update(Request $request)
+
+{
+
+return view('/weight_logs/{:weightLogId}/update');
+
+}
 }
