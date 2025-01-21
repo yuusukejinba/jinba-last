@@ -14,7 +14,7 @@
             </div>
     </div>
 
-    <form class="form" action="/register/step2" method="post">
+    <form class="form" action="/register/step1" method="post">
     @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -54,7 +54,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="password" name="password" placeholder="名前を入力"/>
+                    <input type="password" name="password" placeholder="名前を入力" value="{{ old('password') }}"/>
                 </div>
                 <div class="form__error">
                     @error('password')

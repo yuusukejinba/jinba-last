@@ -9,12 +9,18 @@ use App\Models\Weight_logs;
 use App\Http\Requests\AuthorRequest;
 
 
-class AuthController extends Controller
+class WeightController extends Controller
 {
-    public function register() 
-    {
+    public function register()
+{
+    $weight_target = Weight_target::where('user_id', auth()->id())->first();
+    if ($weight_target) {
+        $weight_logs = Weight_logs::all();
+        return view('weight_logs', compact('weight_target', 'weight_logs'));
+    } else {
         return view('register/step2');
     }
+}
     
     public function create(AuthorRequest $request)
 {
@@ -47,11 +53,22 @@ public function index()
     return view('weight_logs/goal_setting');
 }
 
+public function edit(Request $request)
+{
+
+    $weight_logs = weight_logs::find($request->id);
+    return view('weight_update', ['form' => $weight_logs]);
+
+}
+
 public function update(Request $request)
 
 {
-
-return view('/weight_logs/{:weightLogId}/update');
+    $form = $request->all();
+    unset($form['_token']);
+    weight_logs::find($request->id)->update($form);
+    
+return view('/weight_logs/{:weightLogId}/update' , compact('weight_logs'));
 
 }
 }

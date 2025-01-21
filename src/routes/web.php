@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WeightController;
 use App\Http\Controllers\Weight_management;
 
 /*
@@ -17,15 +17,17 @@ use App\Http\Controllers\Weight_management;
 
 
 Route::middleware('auth')->group(function () {
-         Route::get('register/step2', [AuthController::class, 'register']);
+         Route::get('/', [WeightController::class, 'index']);
+         Route::get('/weight_logs', [WeightController::class, 'register']);
         });
-Route::post('register/step2', [AuthController::class, 'register']);
-Route::post('register/step2', [AuthController::class, 'create']);
-
-Route::post('/weight_logs', [AuthController::class, 'store']);
-Route::get('/weight_logs/goal_setting', [AuthController::class, 'index']);
-Route::post('/weight_logs/goal_setting', [AuthController::class, 'index']);
-Route::post('/weight_logs/{:weightLogId}/update', [AuthController::class, 'update']);
+Route::post('register/step2', [WeightController::class, 'register']);
+Route::post('register/step2', [WeightController::class, 'create']);
+Route::get('/weight_logs', [WeightController::class, 'index']);
+Route::post('/weight_logs', [WeightController::class, 'store']);
+Route::get('/weight_logs/goal_setting', [WeightController::class, 'index']);
+Route::post('/weight_logs/goal_setting', [WeightController::class, 'index']);
+Route::get('/weight_update', [WeightController::class, 'edit']);
+Route::post('/weight_logs/{:weightLogId}/update', [WeightController::class, 'update']);
 
 
 
