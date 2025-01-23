@@ -16,7 +16,7 @@
 
     <form class="form" action="/weight_logs" method="post">
     @csrf
-        <input type="hidden" name="user_id" value="{{ auth()->id() ]}}">
+        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
         <div class="form__group">
             <div class="form__group-title">
                 <span class="form__label--item">現在の体重</span>

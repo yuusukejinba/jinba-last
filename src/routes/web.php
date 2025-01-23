@@ -18,11 +18,12 @@ use App\Http\Controllers\Weight_management;
 
 Route::middleware('auth')->group(function () {
          Route::get('/', [WeightController::class, 'index']);
+         Route::get('register/step2', [WeightController::class, 'register']);
          Route::get('/weight_logs', [WeightController::class, 'register']);
         });
 Route::post('register/step2', [WeightController::class, 'register']);
 Route::post('register/step2', [WeightController::class, 'create']);
-Route::get('/weight_logs', [WeightController::class, 'index']);
+
 Route::post('/weight_logs', [WeightController::class, 'store']);
 Route::get('/weight_logs/goal_setting', [WeightController::class, 'index']);
 Route::post('/weight_logs/goal_setting', [WeightController::class, 'index']);

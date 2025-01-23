@@ -16,7 +16,10 @@
             <h3>Pigly</h3>
             <span class="header__logo">
                 <a class="header__logo__target" href="weight_logs/goal_setting">目標体重設定</a>
-                <a class="header__logo__logout" href="/login">ログアウト</a>
+                <form class="form" action="/logout" method="post">
+                @csrf
+                <button class="header-nav__button">ログアウト</button>
+                </form>
             </span>
         </div>
     </header>
